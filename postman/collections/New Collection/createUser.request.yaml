@@ -1,0 +1,31 @@
+$kind: http-request
+description: ""
+url: http://localhost:3000/api/users?name=Avantika&email=av@gmail.com&password_hash=ffuhfuhurhfu
+method: POST
+queryParams:
+  - key: name
+    value: Avantika
+    disabled: false
+    description: ""
+  - key: email
+    value: av@gmail.com
+    disabled: false
+    description: ""
+  - key: password_hash
+    value: ffuhfuhurhfu
+    disabled: false
+    description: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"test user\",\r
+
+    \    \"email\":\"tugmail.com\",\r
+
+    \    \"password\":\"hello kitty\"\r
+
+    \r
+
+    }"
+order: 3000
