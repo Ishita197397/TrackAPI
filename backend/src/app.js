@@ -3,6 +3,7 @@ import {usersRouter }from './modules/users/index.js';
 import authRouter from './modules/auth/index.js';
 import {clerkMiddleware} from '@clerk/express';
 import requireUserAuth from './modules/auth/middleware/requireAuth.js';
+import endpointsRouter from './modules/endpoints/index.js';
 import cors from 'cors';
 const app= express();
 // Middleware
@@ -22,5 +23,6 @@ app.use('/api/auth', authRouter);
 app.get('/health', (req, res) => {
   res.status(200).json({ message: 'Server is running!' });
 }); 
-
+//endpoints routes
+app.use('/api/endpoints', requireUserAuth, endpointsRouter);
 export default app;
